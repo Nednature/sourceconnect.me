@@ -39,3 +39,6 @@ gem 'jquery-rails'
 
 #use thin webserver
 gem 'thin'
+
+#devise for authentication
+gem 'devise'

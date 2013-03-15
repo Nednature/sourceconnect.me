@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
+  #saftey first kids
+  before_filter :authenticate_user!,  :only => [:edit, :update, :destroy, :create, :new]
   # GET /posts
   # GET /posts.json
   def index
     @posts = Post.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
@@ -41,6 +42,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
+    @post.user = current_user
 
     respond_to do |format|
       if @post.save
