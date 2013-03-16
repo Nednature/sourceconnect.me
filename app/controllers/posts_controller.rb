@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
   #saftey first kids
   before_filter :authenticate_user!,  :only => [:edit, :update, :destroy, :create, :new]
+  before_filter :is_owner, :only => [:edit, :update, :destroy]
   # GET /posts
   # GET /posts.json
+
   def index
     @posts = Post.all
     respond_to do |format|
@@ -82,4 +84,13 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+    def is_owner
+      post = Post.find(params[:id])
+      unless user_signed_in? && post.user == current_user
+        redirect_to(post, :notice => 'You do not have permissions to edit this post')
+      end
+    end
+    
 end
