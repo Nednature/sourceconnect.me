@@ -21,19 +21,25 @@
         <ul class="nav">
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Account
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <% if user_signed_in? %>
+                <li><%= link_to('Logout', destroy_user_session_path) %></li>
+                <li><%= link_to('Edit Account Info', edit_user_registration_path) %></li>
+              <% else %>
+                <li><%= link_to('Login', new_user_session_path) %></li>
+                <li><%= link_to('Register', new_user_registration_path) %></li>
+              <% end %>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
   </div>
-</div>
-<div class="user-auth-nav" style="float-right">
-	<% if user_signed_in? %>
-		<%= link_to('Edit registration', edit_user_registration_path) %> | 
-  		<%= link_to('Logout', destroy_user_session_path) %> 
-  	<% else %>
-  		<%= link_to('Login', new_user_session_path)  %> | 
-  		<%= link_to('Register', new_user_registration_path)  %>
-	<% end %>
 </div>
 <%= yield %>
 
