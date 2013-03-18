@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    #@posts = Post.includes(:comments).order("comments.created_at desc")
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
