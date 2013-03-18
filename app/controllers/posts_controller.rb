@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    #@posts = Post.includes(:comments).order("comments.created_at desc")
+    @posts = Post.order("last_comment_at desc")
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
@@ -46,6 +46,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @post.user = current_user
+    @post.touch(:last_comment_at)
 
     respond_to do |format|
       if @post.save
