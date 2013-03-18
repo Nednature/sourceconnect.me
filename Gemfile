@@ -42,3 +42,6 @@ gem 'thin'
 
 #devise for authentication
 gem 'devise'
+
+#bootstrap
+gem "twitter-bootstrap-rails"
