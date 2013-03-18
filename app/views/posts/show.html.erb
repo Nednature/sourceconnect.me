@@ -1,6 +1,9 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <h1>
+    <%= @post.title %>
+  </h1>
+</div>
 
-<h1><%= @post.title %></h1>
 <p class="meta">
   Posted by: <%= @post.user.email %> On <%= @post.created_at %>
 </p>
