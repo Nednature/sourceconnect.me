@@ -42,9 +42,13 @@
   </div>
 </div>
 <div class="container">
-  <div class="span12">
-    <%= yield %>
-  </div>
+  <% if notice %>
+    <div class="alert">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= notice %>
+    </div>
+  <% end %>
+  <%= yield %>
 </div>
 running on ruby version <%= RUBY_VERSION %>
 </body>

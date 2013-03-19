@@ -46,3 +46,8 @@ gem 'devise'
 
 #bootstrap
 gem "twitter-bootstrap-rails"
+
+#bootstrap editor
+gem 'bootstrap-wysihtml5-rails'
+
+
