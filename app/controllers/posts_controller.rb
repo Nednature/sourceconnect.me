@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  include ApplicationHelper
   #saftey first kids
   before_filter :authenticate_user!,  :only => [:edit, :update, :destroy, :create, :new]
   before_filter :is_owner, :only => [:edit, :update, :destroy]
@@ -90,7 +91,7 @@ class PostsController < ApplicationController
   private
     def is_owner
       post = Post.find(params[:id])
-      unless user_signed_in? && post.user == current_user
+      unless user_signed_in? && can_edit(post.user, current_user)
         redirect_to(post, :notice => 'You do not have permissions to edit this post')
       end
     end
