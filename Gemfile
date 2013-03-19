@@ -50,4 +50,5 @@ gem "twitter-bootstrap-rails"
 #bootstrap editor
 gem 'bootstrap-wysihtml5-rails'
 
-
+#railsadmin
+gem 'rails_admin'
