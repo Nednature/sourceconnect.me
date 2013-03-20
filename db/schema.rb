@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130319173038) do
+ActiveRecord::Schema.define(:version => 20130319192354) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -26,10 +26,11 @@ ActiveRecord::Schema.define(:version => 20130319173038) do
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.integer  "user_id"
     t.datetime "last_comment_at"
+    t.boolean  "hidden",          :default => false
   end
 
   create_table "rails_admin_histories", :force => true do |t|
