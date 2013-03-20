@@ -19,22 +19,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/views/layouts/application.html.erb",
-			"settings":
-			{
-				"buffer_size": 1536,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "config/environments/development.rb",
-			"settings":
-			{
-				"buffer_size": 1745,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -60,6 +44,8 @@
 	},
 	"file_history":
 	[
+		"/home/daniel/source/config/environments/development.rb",
+		"/home/daniel/source/app/views/layouts/application.html.erb",
 		"/C/Sites/source/app/assets/javascripts/bootstrap.js.coffee",
 		"/C/Sites/source/Gemfile",
 		"/C/Sites/source/app/assets/stylesheets/scaffolds.css.scss"
@@ -98,65 +84,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/views/layouts/application.html.erb",
-					"settings":
-					{
-						"buffer_size": 1536,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1519,
-								1519
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 390.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "config/environments/development.rb",
-					"settings":
-					{
-						"buffer_size": 1745,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1689,
-								1689
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 261.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],

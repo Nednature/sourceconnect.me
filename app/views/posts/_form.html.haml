@@ -1,0 +1,22 @@
+= form_for(@post) do |f|
+  - if @post.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@post.errors.count, "error")
+        prohibited this post from being saved:
+      %ul
+        - @post.errors.full_messages.each do |msg|
+          %li= msg
+  .control-group
+    .input-prepend
+      %span.add-on
+        = f.label :title
+      = f.text_field :title, :class => 'span5'
+    .field
+      = f.text_area :body, :class => 'wysihtml5 span6'
+    .actions
+      = f.submit
+:javascript
+  $('.wysihtml5').each(function(i, elem) {
+    $(elem).wysihtml5();
+  });
