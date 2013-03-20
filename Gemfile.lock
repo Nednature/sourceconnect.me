@@ -57,6 +57,7 @@ GEM
     font-awesome-sass-rails (3.0.2.2)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
+    google-analytics-rails (0.0.4)
     haml (4.0.0)
       tilt
     hike (1.2.1)
@@ -174,6 +175,8 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   execjs
+  google-analytics-rails
+  haml
   jquery-rails
   rails (= 3.2.12)
   rails_admin

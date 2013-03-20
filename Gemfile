@@ -52,3 +52,9 @@ gem 'bootstrap-wysihtml5-rails'
 
 #railsadmin
 gem 'rails_admin'
+
+#analytics nigga
+gem 'google-analytics-rails'
+
+#use haml
+gem 'haml'
