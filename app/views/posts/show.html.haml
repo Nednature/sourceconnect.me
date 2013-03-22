@@ -2,7 +2,7 @@
   %h1
     = @post.title
     %small
-      Posted by #{@post.user.email} at #{@post.created_at}
+      Posted by #{@post.user.username} #{time_ago_in_words(@post.created_at)} ago
 #post-body.row
   = @post.body
 %h2 Comments
@@ -13,7 +13,7 @@
         %a.pull-left{:href => "#"}
           %img.media-object{:src => "http://placehold.it/64x64"}/
         .media-body
-          %h4.media-heading.comment= f.user.email
+          %h4.media-heading.comment= f.user.username
           = raw f.body
 .row
   = simple_form_for([@post, @post.comments.build], :html => {:class => 'form-horizontal span6'}) do |f|
