@@ -1,9 +1,13 @@
 %h1 src
-%ul#blog-list
-  - @posts.each do |post|
-    %li
-      %h2.post-title= link_to post.title, post
-      .post-body= post.body
-%br/
+.row-fluid
+	- @posts.each do |f|
+		.span4.postbox
+			.bump
+				%h2.divide= f.title
+				%p= f.body
+				%p.offset4
+					=link_to 'More...', f, :class => "btn"
+
+
 - if user_signed_in?
-  = link_to 'New Post', new_post_path
+	= link_to 'New Post', new_post_path

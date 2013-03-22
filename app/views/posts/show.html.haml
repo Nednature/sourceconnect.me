@@ -8,19 +8,18 @@
 %h2 Comments
 %ul.media-list
   - @post.comments.each do |f|
-    %li.media
-      %a.pull-left{:href => "#"}
-        %img.media-object{:src => "http://placehold.it/64x64"}/
-      .media-body
-        %h4.media-heading= f.user.email
-        = raw f.body
+    %ul
+      %li.media
+        %a.pull-left{:href => "#"}
+          %img.media-object{:src => "http://placehold.it/64x64"}/
+        .media-body
+          %h4.media-heading.comment= f.user.email
+          = raw f.body
 .row
-  %h3 Add a comment
-  = form_for([@post, @post.comments.build]) do |f|
-    .row
-      = f.text_area :body, :class => 'wysihtml5 span6'
-    .row
-      = f.submit
+  = simple_form_for([@post, @post.comments.build], :html => {:class => 'form-horizontal span6'}) do |f|
+    %h3 Add a comment
+    = f.input :body, label: false, input_html: { class: 'wysihtml5 span6' }
+    = f.submit 'Save'
 - if user_signed_in? && @post.user == current_user
   = link_to 'Edit', edit_post_path(@post)
 = link_to 'Back', posts_path

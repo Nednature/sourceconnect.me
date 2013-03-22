@@ -58,3 +58,5 @@ gem 'google-analytics-rails'
 
 #use haml
 gem 'haml'
+
+gem 'simple_form'
