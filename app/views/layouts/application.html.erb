@@ -33,6 +33,11 @@
                 <% end %>
               </ul>
             </li>
+            <% if user_signed_in? && current_user.admin? %>
+              <li>
+                <%= link_to('Admin', '/radmin') %>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>
