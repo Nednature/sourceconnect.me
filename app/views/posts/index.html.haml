@@ -1,4 +1,9 @@
-%h1 src
+.row-fluid
+	.hero-unit
+		%h1 Welcome to Source.
+		%p We're a community dedicated to learning, sharing, and self-discovery.
+		%p
+			=link_to 'Learn more', '#', :class => 'btn-primary btn-large offset2'
 .row-fluid
 	- @posts.each do |f|
 		.span4.postbox
