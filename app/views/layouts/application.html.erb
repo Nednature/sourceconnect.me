@@ -46,7 +46,9 @@
       <%= notice %>
     </div>
   <% end %>
-  <%= yield %>
+  <div class="span12">
+    <%= yield %>
+  </div>
 </div>
 running on ruby version <%= RUBY_VERSION %> with rails version <%= Rails::VERSION::STRING %>
 </body>
