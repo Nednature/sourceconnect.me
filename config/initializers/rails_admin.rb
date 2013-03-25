@@ -2,6 +2,9 @@
 # See github.com/sferik/rails_admin for more informations
 
 RailsAdmin.config do |config|
+  config.authorize_with do
+    redirect_to "/" unless current_user.try(:admin?)
+  end
 
 
   ################  Global configuration  ################
