@@ -4,15 +4,19 @@
 		%p We're a community dedicated to learning, sharing, and self-discovery.
 		%p
 			=link_to 'Learn more', '#', :class => 'btn-primary btn-large offset2'
-.row-fluid
+.row-fluid#postcontainer
 	- @posts.each do |f|
-		.span4.postbox
-			.bump
-				%h2.divide= f.title
-				%p=  raw f.body
-				%p.offset4
-					=link_to 'More...', f, :class => "btn"
+		.span4.postbox.bump
+			%h2.divide= f.title
+			%p= truncate(strip_tags(f.body), :length => Random.rand(200..300))
+			%p.offset4
+				=link_to 'More...', f, :class => "btn"
 
 
 - if user_signed_in?
 	= link_to 'New Post', new_post_path
+
+:javascript
+	$('#postcontainer').masonry({
+		itemSelector: '.postbox',
+	});

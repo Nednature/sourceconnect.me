@@ -78,6 +78,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    masonry-rails (0.2.0)
+      rails
     mime-types (1.21)
     multi_json (1.7.2)
     nested_form (0.3.1)
@@ -181,6 +183,7 @@ DEPENDENCIES
   google-analytics-rails
   haml
   jquery-rails
+  masonry-rails
   rails (= 3.2.13)
   rails_admin
   sass-rails (~> 3.2.3)

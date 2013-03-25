@@ -11,6 +11,13 @@
  *= require_self
  *= require_tree .
  *= require bootstrap-wysihtml5
+ *= require 'masonry/basic'
+ *= require 'masonry/centered'
+ *= require 'masonry/fluid'
+ *= require 'masonry/gutters'
+ *= require 'masonry/infinitescroll'
+ *= require 'masonry/right-to-left'
+ *= require 'masonry/transitions'
  */
 
 @media (min-width: 980px) {
