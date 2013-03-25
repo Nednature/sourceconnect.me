@@ -4,8 +4,8 @@
     %small
       Posted by #{@post.user.username} #{time_ago_in_words(@post.created_at)} ago
 #post-body.row
-  = @post.body
-%h2 Comments
+  = raw @post.body
+%h3 Comments
 %ul.media-list
   - @post.comments.each do |f|
     %ul
@@ -15,11 +15,27 @@
         .media-body
           %h4.media-heading.comment= f.user.username
           = raw f.body
-.row
-  = simple_form_for([@post, @post.comments.build], :html => {:class => 'form-horizontal span6'}) do |f|
+
+%a{:href => "#comment", :role => 'button', 'data-toggle' => 'modal'}
+  test modal
+
+
+.modal.fade.hide#comment
+  .modal-header
+    %button.close{ :type => 'button', 'data-dismiss' => 'modal', 'data-target' => '#comment'}
+      &times
     %h3 Add a comment
-    = f.input :body, label: false, input_html: { class: 'wysihtml5 span6' }
-    = f.submit 'Save'
+    .modal-body
+      = simple_form_for([@post, @post.comments.build], :html => {:class => 'form-horizontal'}) do |f|
+        .control-group
+          = f.input :body, label: false, input_html: { class: 'wysihtml5'}
+        .control-group
+          =f.submit 'Save'
+    .modal-footer
+      %a.btn{:href => "#", :type => 'button', 'data-dismiss' => 'modal', 'data-target' => '#comment'}
+        Close
+
+
 - if user_signed_in? && @post.user == current_user
   = link_to 'Edit', edit_post_path(@post)
 = link_to 'Back', posts_path
