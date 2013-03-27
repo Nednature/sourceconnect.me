@@ -12,7 +12,7 @@
 	- @posts.each do |f|
 		.span3.postbox.bump2
 			.bump
-				%h2.divide= f.title
+				%h2.divide.smaller3= f.title
 				%p= truncate(strip_tags(f.body), :length => Random.rand(200..300))
 				%p
 					=link_to 'More...', f, :class => "btn"
@@ -25,8 +25,34 @@
 	= link_to 'New Post', new_post_path
 
 :javascript
-	$('#postcontainer').masonry({
-		itemSelector: '.postbox',
-		columnWidth: 0,
-		isanimated: true
+	function resizeboxes() {
+		var width = $(window).width();
+		var setme;
+		console.log('resizeboxes called, detected width:', width);
+		if (width >= 1200) {
+			setme = '250px';
+		}
+		else if (width < 1200 && width > 1000) {
+			setme = '30%';
+		}
+		else if (width < 1000 && width > 768) {
+			setme = '25%';
+		}
+		else {
+			setme = '100%'
+		}
+		console.log(setme, "set!!!!!");
+		$('.postbox').css('width', setme);
+	}
+	$(document).ready(function(){
+		resizeboxes();
+		$(window).resize(function() {
+			resizeboxes();
+		});
+		$(window).trigger('reisze');
+		$('#postcontainer').masonry({
+			itemSelector: '.postbox',
+			isAnimated: true,
+			columnWidth: 0
+		});
 	});

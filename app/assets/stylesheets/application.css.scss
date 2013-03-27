@@ -19,7 +19,9 @@
  *= require 'masonry/right-to-left'
  *= require 'masonry/transitions'
  */
-
+.smaller3 {
+	font-size: 20px;
+}
 @media (min-width: 980px) {
 	body {
 		padding-top: 40px;
@@ -33,12 +35,20 @@
 	margin: 10px;
 }
 
+.hero-unit {
+	background-color: rgb(220,220,220) !important;
+}
+
 .bump {
 	margin: 10px;
 }
 
 .bump2 {
 	margin: 5px;
+}
+
+#postcontainer {
+	margin-top: 30px;
 }
 
 .divide {
