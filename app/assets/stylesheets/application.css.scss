@@ -48,6 +48,16 @@ body {
 	}
 }
 
+.combox {
+	color: black;
+	background-color: rgba(255, 255, 255, 0.45);
+	box-shadow: 0 0 20px white;
+	border-radius: 5px;
+}
+.round {
+	border-radius: 20px;
+}
+
 .hero-unit {
 	background-color: rgb(220,220,220) !important;
 }

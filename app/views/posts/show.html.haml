@@ -5,13 +5,14 @@
       Posted by #{@post.user.username} #{time_ago_in_words(@post.created_at)} ago
 #post-body.row
   = raw @post.body
+
 %h3 Comments
-%ul.media-list
+%ul.media-list.row
   - @post.comments.each do |f|
     %ul
-      %li.media
+      %li.media.combox.span6
         %a.pull-left{:href => "#"}
-          %img.media-object{:src => "http://placehold.it/64x64"}/
+          %img.media-object.bump2.round{:src => "http://placehold.it/64x64"}/
         .media-body
           %h4.media-heading.comment= f.user.username
           = raw f.body
