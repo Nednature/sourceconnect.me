@@ -47,6 +47,13 @@ body {
 		text-shadow: 0px 0px 7px white;
 	}
 }
+.glow {
+	color: black;
+	text-shadow: 0 0 7px white;
+	small {
+		color: black !important;
+	}
+}
 
 .combox {
 	color: black;
@@ -91,4 +98,12 @@ h4 {
 
 .wysihtml5 {
 	height: 200px
+}
+
+.dform1 {
+	background-color: rgba(255,255,255,0.9) !important;
+	border-radius: 25px;
+	.form-actions {
+		background-color: rgba(255,255,255,0.9) !important;
+	}
 }

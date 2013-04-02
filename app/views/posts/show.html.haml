@@ -1,12 +1,12 @@
 .row.page-header
-  %h1
+  %h1.glow
     = @post.title
     %small
       Posted by #{@post.user.username} #{time_ago_in_words(@post.created_at)} ago
-#post-body.row
+#post-body.row.glow
   = raw @post.body
 
-%h3 Comments
+%h3.glow Comments
 %ul.media-list.row
   - @post.comments.each do |f|
     %ul
