@@ -1,0 +1,52 @@
+!!!
+%html
+  %head
+    - if content_for?(:title)
+      %title
+        Source | #{yield(:title)}
+    - else
+      %title
+        Source Beta
+    %title Source
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+  %body
+    = analytics_init
+    .row-fluid
+      .navbar.navbar-inverse.navbar-fixed-top
+        .navbar-inner
+          .container-fluid
+            %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            = link_to "Source", posts_path, :class => "brand"
+            .nav-collapse.collapse
+              %ul.nav
+                %li.dropdown
+                  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                    Account
+                    %b.caret
+                  %ul.dropdown-menu
+                    - if user_signed_in?
+                      %li= link_to('Logout', destroy_user_session_path)
+                      %li= link_to('Edit Account Info', edit_user_registration_path)
+                    - else
+                      %li= link_to('Login', new_user_session_path)
+                      %li= link_to('Register', new_user_registration_path)
+                - if user_signed_in?
+                  %li
+                    = link_to 'New Post', new_post_path
+                - if user_signed_in? && current_user.admin?
+                  %li
+                    = link_to('Admin', '/radmin')
+    .container-fluid
+      - if notice
+        .alert
+          %button.close{"data-dismiss" => "alert", :type => "button"} ×
+          = notice
+      .span12
+        = yield
+    running on ruby version #{RUBY_VERSION} with rails version #{Rails::VERSION::STRING}

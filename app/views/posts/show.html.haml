@@ -1,3 +1,5 @@
+- content_for(:title) do
+  - @post.title
 .row.page-header
   %h1.glow
     = @post.title
@@ -13,8 +15,9 @@
       %li.media.combox.span6
         %a.pull-left{:href => "#"}
           %img.media-object.bump2.round{:src => "http://placehold.it/64x64"}/
-        .media-body
-          %h4.media-heading.comment= f.user.username
+        .pull-right.comment_user
+          = f.user.username
+        .media-body.comment
           = raw f.body
 
 - if user_signed_in?

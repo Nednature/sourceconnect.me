@@ -88,11 +88,15 @@ body {
 	border-bottom: 1px black solid;
 }
 
-h4 {
-	.comment {
-		font-size: 15px;
-		font-color: gray;
-	}
+.comment {
+
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+.comment_user {
+	margin-right: 15px;
+	margin-top: 10px;
 }
 
 .centered {
