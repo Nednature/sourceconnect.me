@@ -17,8 +17,9 @@
           %h4.media-heading.comment= f.user.username
           = raw f.body
 
-%a{:href => "#comment", :role => 'button', 'data-toggle' => 'modal'}
-  test modal
+- if user_signed_in?
+  %a.btn{:href => "#comment", :role => 'button', 'data-toggle' => 'modal'}
+    Add a comment
 
 
 .modal.fade.hide#comment
@@ -30,11 +31,10 @@
       = simple_form_for([@post, @post.comments.build], :html => {:class => 'form-horizontal'}) do |f|
         .control-group
           = f.input :body, label: false, input_html: { class: 'wysihtml5'}
-        .control-group
-          =f.submit 'Save'
-    .modal-footer
-      %a.btn{:href => "#", :type => 'button', 'data-dismiss' => 'modal', 'data-target' => '#comment'}
-        Close
+        .modal-footer.control-group
+          %a.btn{:href => "#", :type => 'button', 'data-dismiss' => 'modal', 'data-target' => '#comment'}
+            Close
+          = f.submit 'Save', :class => 'btn btn-primary'
 
 
 - if user_signed_in? && @post.user == current_user
