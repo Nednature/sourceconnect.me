@@ -15,7 +15,7 @@
     .field
       = f.text_area :body, :class => 'wysihtml5 span6'
     .actions
-      = f.submit
+      = f.submit, :class => 'btn'
 :javascript
   $('.wysihtml5').each(function(i, elem) {
     $(elem).wysihtml5();
