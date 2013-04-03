@@ -15,6 +15,19 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
 
+  def self.find_for_facebook_oath(auth, signed_in_resource=nil)
+    user. User.where(:provider => auth.provider, :uid => auth.uid).first
+    unless user
+      user = User.create(username:auth.extra.raw_info.name.delete(' '),
+        provider:auth.provider,
+        uid:auth.uid,
+        email:auth.info.email,
+        password:Devise.friendly_token[0,20]
+      )
+    end
+    user
+  end
+
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
