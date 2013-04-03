@@ -62,3 +62,6 @@ gem 'haml'
 gem 'simple_form'
 
 gem 'masonry-rails'
+
+gem 'omniauth'
+gem 'omniauth-facebook'

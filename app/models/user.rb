@@ -5,9 +5,10 @@ class User < ActiveRecord::Base
   #devise :database_authenticatable, :registerable,
   #      :recoverable, :rememberable, :trackable, :validatable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable
+  devise :omniauthable, :omniauth_providers => [:facebook]
   # Setup accessible (or protected) attributes for your model
   attr_accessor :login
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :login
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :login, :provider, :uid
   validates :username, :uniqueness => {:case_sensitive => false}
   validates :email, :uniqueness => {:case_sensitive => false}
   # attr_accessible :title, :body
