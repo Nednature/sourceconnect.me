@@ -15,7 +15,7 @@
 		.span3.postbox.bump2
 			.bump
 				%h2.divide.smaller3= f.title
-				%p= truncate(strip_tags(f.body), :length => Random.rand(200..300))
+				%p= index_process(f.body)
 				%p
 					=link_to 'More...', f, :class => "btn"
 				%p

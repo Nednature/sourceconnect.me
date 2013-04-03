@@ -10,4 +10,10 @@ module ApplicationHelper
 		end
 	end
 
+	def index_process(f)
+		f = strip_tags(f)
+		f = truncate(f, :length => Random.rand(200..300))
+		f = f.gsub(/&nbsp;/i," ")
+		return f
+	end
 end
