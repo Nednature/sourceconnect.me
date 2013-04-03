@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   has_many :comments
 
   def self.find_for_facebook_oath(auth, signed_in_resource=nil)
-    user. User.where(:provider => auth.provider, :uid => auth.uid).first
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
     unless user
       user = User.create(username:auth.extra.raw_info.name.delete(' '),
         provider:auth.provider,
