@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessor :login
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :login, :provider, :uid, :avatar
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :small => "100x100>", :thumb => "64x64>"}
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :small => "100x100>", :thumb => "64x64>"}, :default_url => "http://placehold.it/64x64.png"
   validates :username, :uniqueness => {:case_sensitive => false}
   validates :email, :uniqueness => {:case_sensitive => false}
   # attr_accessible :title, :body
