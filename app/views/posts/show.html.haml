@@ -6,7 +6,8 @@
     %small
       Posted by #{@post.user.username} #{time_ago_in_words(@post.created_at)} ago
 #post-body.row
-  
+  .pull-left
+    %img.avatar{:src => @post.user.avatar.url(:small)}
   = raw @post.body
 
 %h3.glow Comments
@@ -15,7 +16,7 @@
     %ul
       %li.media.combox.span6
         %a.pull-left{:href => "#"}
-          %img.media-object.bump2.round{:src => "http://placehold.it/64x64"}/
+          %img.media-object.avatar{:src => f.user.avatar.url(:thumb)}/
         .pull-right.comment_user
           .row
             %small

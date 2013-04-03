@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130403045853) do
+ActiveRecord::Schema.define(:version => 20130403193921) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -39,12 +39,18 @@ ActiveRecord::Schema.define(:version => 20130403045853) do
     t.integer  "item"
     t.string   "table"
     t.integer  "month",      :limit => 2
-    t.integer  "year",       :limit => 8
+    t.integer  "year",       :limit => 5
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
+  create_table "user_avatars", :force => true do |t|
+    t.integer "user_id"
+    t.string  "style"
+    t.binary  "file_contents"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false
@@ -63,6 +69,10 @@ ActiveRecord::Schema.define(:version => 20130403045853) do
     t.boolean  "admin",                  :default => false
     t.string   "provider"
     t.string   "uid"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -66,3 +66,5 @@ gem 'masonry-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+gem 'paperclip'
+gem 'rmagick'
