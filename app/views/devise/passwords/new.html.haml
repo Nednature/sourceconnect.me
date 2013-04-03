@@ -1,0 +1,8 @@
+.row-fluid.dform1.centered
+  %h2.bump2.glow Forgot Your Password?
+  = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => 'form-horizontal'}) do |f|
+    .form-inputs
+      =f.input :email, :required => true, :label => false, :placeholder => 'Email'
+    .dform2
+      = f.button :submit, "Send me password reset instructions", :class => 'btn'
+= render "devise/shared/links"
