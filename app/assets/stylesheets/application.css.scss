@@ -38,6 +38,16 @@ body {
 	background-attachment: fixed;
 }
 
+#post-body {
+	padding: 20px;
+	color: black;
+	min-height: 100px;
+	background-color: rgba(255,255,255,0.45);
+	border: 3px solid rgb(230,230,255);
+	border-radius: 25px;
+	margin: 10px;
+	box-shadow: 0 0 20px white;
+}
 
 .postbox {
 	color: black;

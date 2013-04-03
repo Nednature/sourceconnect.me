@@ -5,7 +5,8 @@
     = @post.title
     %small
       Posted by #{@post.user.username} #{time_ago_in_words(@post.created_at)} ago
-#post-body.row.glow
+#post-body.row
+  
   = raw @post.body
 
 %h3.glow Comments
