@@ -1,0 +1,14 @@
+.row-fluid.dform1.centered
+  %h2.bump2.glow Edit User
+  = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal'}) do |f|
+    .form-inputs
+      = f.input :username, :autofocus => true, :label => false, :placeholder => 'Username'
+      = f.input :email, :label => false, :placeholder => 'Email'
+      = f.input :password, :autocomplete => "off", :hint => 'leave it blank if you don\'t want to change it', :label => false, :placeholder => 'Password'
+      = f.input :password_confirmation, :label => false, :placeholder => 'Confirm Password', :autocomplete => "off"
+      = f.input :current_password, :label => false, :placeholder => 'Current Password', :hint => 'We need your current password to confirm your changes'
+      .dform2
+        = f.button :submit, 'Update', :class => 'btn btn-primary'
+        = link_to 'Back', :back, :class => 'btn'
+= render 'devise/shared/links'
+
