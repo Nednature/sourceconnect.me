@@ -14,11 +14,11 @@
 	- @posts.each do |f|
 		.span3.postbox.bump2
 			.bump
-				%h2.divide.smaller3= f.title
-				%p= index_process(f.body)
-				%p
+				%h2.divide.smaller3 = f.title
+				%p = index_process(f.body)
+				%p.centered
 					=link_to 'More...', f, :class => "btn"
-				%p
+				%p.centered
 					%small
 						Last updated #{time_ago_in_words(f.last_comment_at)} ago
 
