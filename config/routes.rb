@@ -1,7 +1,7 @@
 Src::Application.routes.draw do
   mount RailsAdmin::Engine => '/radmin', :as => 'rails_admin'
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  devise_for :users
 
   resources :posts do
     resources :comments
