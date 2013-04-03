@@ -14,8 +14,8 @@
 	- @posts.each do |f|
 		.span3.postbox.bump2
 			.bump
-				%h2.divide.smaller3 = f.title
-				%p = index_process(f.body)
+				%h2.divide.smaller3= f.title
+				%p= index_process(f.body)
 				%p.centered
 					=link_to 'More...', f, :class => "btn"
 				%p.centered
