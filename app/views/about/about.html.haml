@@ -1,0 +1,12 @@
+.tabbable
+  %ul.nav.nav-tabs
+    %li.active
+      %a{"data-toggle" => "tab", :href => "#about-source"} About
+    %li
+      %a{"data-toggle" => "tab", :href => "#techdata"} Technical Data
+  .tab-content
+    .tab-pane.aboot.active#about-source
+      About Content
+    .tab-pane.aboot#techdata
+      .row
+        Rendered by #{`hostname --fqdn`} which has an uptime of #{`uptime`}
