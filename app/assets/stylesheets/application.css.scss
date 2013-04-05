@@ -38,6 +38,12 @@ body {
 	background-attachment: fixed;
 }
 
+.postheading {
+	color: black;
+	text-shadow: 0 0 7px white;
+	word-wrap: break-word;
+}
+
 #post-body {
 	padding: 20px;
 	color: black;
@@ -59,8 +65,10 @@ body {
 	border-radius: 25px;
 	margin: 10px;
 	box-shadow: 0 0 20px white;
+	word-wrap: break-word;
 	h2 {
 		text-shadow: 0px 0px 7px white;
+		word-wrap: break-word;
 	}
 }
 
