@@ -1,3 +1,5 @@
+- content_for(:title) do
+  - 'Sign In'
 .row-fluid.dform1.centered
   %h2.bump2.glow Sign in
   = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal' }) do |f|
