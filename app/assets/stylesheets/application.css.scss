@@ -42,6 +42,9 @@ body {
 	color: black;
 	text-shadow: 0 0 7px white;
 	word-wrap: break-word;
+	small {
+		color: black !important;
+	}
 }
 
 #post-body {
