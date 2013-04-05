@@ -17,6 +17,16 @@ module ApplicationHelper
 		return f
 	end
 
+	def user_slug(user)
+		slug = User.find(user.id).slug
+		slug
+	end
+
+	def user_path(user)
+		slug = user_slug(user)
+		path = "/users/#{slug}"
+	end
+
 	def user_avatar_url(user, size)
 		if user.avatar.present?
 			if (size == 'thumb')

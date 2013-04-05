@@ -24,11 +24,12 @@
   - @post.comments.each do |f|
     %ul
       %li.media.combox.span6
-        %a.pull-left{:href => "#"}
+        %a.pull-left{:href => user_path(f.user)}
           %img.media-object.avatar{:src => user_avatar_url(f.user,'thumb')}
         .pull-right.comment_user
           .row
             %small
+              By #{link_to f.user.username, user_path(f.user)}
               By #{f.user.username}
           .row
             %small
