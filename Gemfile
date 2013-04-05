@@ -68,3 +68,5 @@ gem 'omniauth-facebook'
 
 gem 'paperclip'
 gem 'rmagick'
+
+gem 'friendly_id'

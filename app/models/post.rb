@@ -1,9 +1,8 @@
 class Post < ActiveRecord::Base
+  extend FriendlyId
   attr_accessible :body, :title
   validates_presence_of :title, :body, :user
   belongs_to :user
   has_many :comments
-  def to_param
-  	"#{id} #{title}".parameterize
-  end
+  friendly_id :title, use: [:slugged, :history]
 end
