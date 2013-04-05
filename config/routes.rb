@@ -5,6 +5,7 @@ Src::Application.routes.draw do
     resources :comments
   end
   resources :about
+  resources :users
   root :to => "posts#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
