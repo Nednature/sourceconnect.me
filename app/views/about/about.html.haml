@@ -17,5 +17,10 @@
       %p
         The site will eventually have a lexicon and wiki that will be searchable by anyone and contributable and maintained by those that are part of the site.. an ever growing knowledge base on just about everything you can imagine.
     .tab-pane.aboot#techdata
-      .row
-        Rendered by #{`hostname --fqdn`} which has an uptime of #{`uptime`}
+      %ul
+        %li
+          Rendered By #{`hostname --fqdn`} (#{`uptime`}) (#{`uname -a`})
+        %li
+          Ruby Version #{RUBY_VERSION}
+        %li
+          Rails Version #{Rails::VERSION::STRING}
