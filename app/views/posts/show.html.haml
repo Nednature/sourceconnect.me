@@ -7,7 +7,7 @@
       Posted by #{@post.user.username} #{time_ago_in_words(@post.created_at)} ago
 #post-body.row
   .pull-left
-    %img.avatar{:src => @post.user.avatar.url(:small)}
+    %img.avatar{:src => user_avatar_url(@post.user, 'small')}
   = raw @post.body
 
 %h3.glow Comments
@@ -16,7 +16,7 @@
     %ul
       %li.media.combox.span6
         %a.pull-left{:href => "#"}
-          %img.media-object.avatar{:src => f.user.avatar.url(:thumb)}/
+          %img.media-object.avatar{:src => user_avatar_url(f.user,'thumb')}
         .pull-right.comment_user
           .row
             %small
