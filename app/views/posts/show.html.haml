@@ -6,7 +6,7 @@
     %small
       Posted by #{@post.user.username} #{time_ago_in_words(@post.created_at)} ago
 #post-body.row
-  .pull-left
+  %a.pull-left{:src => user_path(@post.user)}
     %img.avatar{:src => user_avatar_url(@post.user, 'small')}
   = raw @post.body
 
