@@ -30,7 +30,6 @@
           .row
             %small
               By #{link_to f.user.username, user_path(f.user)}
-              By #{f.user.username}
           .row
             %small
               #{time_ago_in_words(f.created_at)} ago
