@@ -33,6 +33,9 @@
           .row
             %small
               #{time_ago_in_words(f.created_at)} ago
+          .row
+            %small
+              Edit | Delete
         .media-body.comment
           = raw f.body
 
