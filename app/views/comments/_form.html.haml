@@ -1,7 +1,7 @@
 = form_for([@post,@post.comments.build]) do |f|
   .control-group
     .field
-      = f.text_area :body, :class => 'wysihtml5 span6'
+      = f.text_area :body, :class => 'wysihtml5 span6', :value => Comment.find(params[:id]).body
     .actions
       = f.submit 'Save', :class => 'btn'
 :javascript
