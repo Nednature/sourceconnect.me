@@ -63,6 +63,9 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
+    unless can_edit(@post.user, current_user)
+      redirect_to @post, notice: 'You don\'t have permission to do this.'
+    end
     @post.touch(:last_comment_at)
     respond_to do |format|
       if @post.update_attributes(params[:post])
@@ -79,6 +82,9 @@ class PostsController < ApplicationController
   # DELETE /posts/1.json
   def destroy
     @post = Post.find(params[:id])
+    unless can_edit(@post.user, current_user)
+      redirect_to @post, notice: 'You don\'t have permission to do this.'
+    end
     @post.destroy
 
     respond_to do |format|

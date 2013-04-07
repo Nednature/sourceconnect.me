@@ -27,6 +27,16 @@ module ApplicationHelper
 		path = "/users/#{slug}"
 	end
 
+	def comment_editor_path(post,comment)
+		url = "/posts/#{post.slug}/comments/#{comment.id}/edit"
+		url
+	end
+
+	def comment_rm_path(post,comment)
+		url = "/posts/#{post.slug}/comments/#{comment.id}/"
+		url
+	end
+
 	def user_avatar_url(user, size)
 		if user.avatar.present?
 			if (size == 'thumb')
