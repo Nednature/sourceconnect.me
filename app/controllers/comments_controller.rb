@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 	before_filter :authenticate_user!, :only => [:create, :update, :edit, :destroy]
+	before_filter :is_owner, :only => [:edit, :update, :destroy]
 	def create
 		@post = Post.find(params[:post_id])
 		@comment = @post.comments.create(params[:comment])
@@ -40,4 +41,14 @@ class CommentsController < ApplicationController
       		format.json { head :no_content }
     	end
   	end
+
+  	private
+    def is_owner
+      comment = Comment.find(params[:id])
+      post = Post.find(params[:post_id])
+      unless user_signed_in? && ((comment.user == current_user) || (current_user.admin?))
+        redirect_to(post, :notice => 'You do not have permissions to edit this')
+      end
+    end
+
 end

@@ -96,7 +96,7 @@ class PostsController < ApplicationController
   private
     def is_owner
       post = Post.find(params[:id])
-      unless user_signed_in? && can_edit(post.user, current_user)
+      unless user_signed_in? && ((post.user == current_user) || (current_user.admin?))
         redirect_to(post, :notice => 'You do not have permissions to edit this post')
       end
     end
