@@ -33,9 +33,10 @@
           .row
             %small
               #{time_ago_in_words(f.created_at)} ago
-          .row
-            %small
-              #{link_to 'Edit', comment_editor_path(@post,f)} | #{link_to 'Delete', comment_rm_path(@post,f), method: :delete }
+          - if can_edit(f.user, current_user)
+            .row
+              %small
+                #{link_to 'Edit', comment_editor_path(@post,f)} | #{link_to 'Delete', comment_rm_path(@post,f), method: :delete }
         .media-body.comment
           = raw f.body
 
