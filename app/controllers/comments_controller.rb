@@ -16,8 +16,8 @@ class CommentsController < ApplicationController
 	end
 
 	def update
-		@comment = Comment.find(params[:comment_id])
-		@post = @post.find(params(:post_id))
+		@comment = Comment.find(params[:id])
+		@post = Post.find(params[:post_id])
 		@post.touch(:last_comment_at)
 		respond_to do |format|
 			if @comment.update_attributes(params[:comment])
@@ -33,8 +33,8 @@ class CommentsController < ApplicationController
 	def destroy
 		# DELETE /posts/1
   		# DELETE /posts/1.json
+  		@comment = Comment.find(params[:id])
     	@post = Post.find(params[:post_id])
-    	@comment = Comment.find(params[:id])
     	@comment.destroy
     	respond_to do |format|
       		format.html { redirect_to @post }
