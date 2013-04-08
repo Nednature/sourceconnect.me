@@ -68,5 +68,6 @@ gem 'omniauth-facebook'
 
 gem 'paperclip'
 gem 'rmagick'
+gem 'aws-sdk'
 
 gem 'friendly_id'
