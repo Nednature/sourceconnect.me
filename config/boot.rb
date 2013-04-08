@@ -10,7 +10,7 @@ module Rails
   class Server
    alias :default_options_alias :default_options
      def default_options
-       default_options_alias.merge!(:Port => 4242, :Host => "127.0.0.1")
+       default_options_alias.merge!(:Port => 4242)
      end
     end
   end
