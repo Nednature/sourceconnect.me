@@ -1,0 +1,12 @@
+.row
+  .span2.userbox
+    %h1= @user.username
+    .row
+      %img{:src => user_avatar_url(@user,'medium') }
+  .span6.userbox
+    - @user.posts.each do |f|
+      .row
+        %h3= f.title
+        = f.body
+
+  
