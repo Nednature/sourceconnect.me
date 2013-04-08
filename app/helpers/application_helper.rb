@@ -3,7 +3,7 @@ module ApplicationHelper
 	def can_edit (original, user)
 		if original == user
 			return true
-		elsif user.admin?
+		elsif user.try(:admin)
 			return true
 		else
 			return false
