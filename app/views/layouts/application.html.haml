@@ -3,10 +3,10 @@
   %head
     - if content_for?(:title)
       %title
-        Source | #{yield(:title)}
+        SourceConnect | #{yield(:title)}
     - else
       %title
-        Source Beta
+        SourceConnect Beta
     %title Source
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
@@ -22,7 +22,7 @@
               %span.icon-bar
               %span.icon-bar
               %span.icon-bar
-            = link_to "Source ᵇᵉᵗᵃ", posts_path, :class => "brand"
+            = link_to "SourceConnect ᵇᵉᵗᵃ", posts_path, :class => "brand"
             .nav-collapse.collapse
               %ul.nav
                 %li.dropdown
