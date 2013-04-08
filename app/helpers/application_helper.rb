@@ -62,18 +62,4 @@ module ApplicationHelper
 			"http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size2}&d=identicon"
 		end
 	end
-
-	def FILES3
-		Dir.glob(/home/daniel/src/public/users/avatars/**/*).each do |path|
-			attachment = File.open path
-			next if File.directory? attachment
-
-			full_path = File.expand_path attachment
-			id = full_path.match(/(\d+)\/original\/.+$/)[1]
-			puts "Re-Saving ##{id}..."
-			your_model = User.avatar.find(id)
-			your_model.document = attachment
-		end
-	end
-
 end
