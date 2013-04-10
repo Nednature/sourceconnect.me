@@ -12,12 +12,13 @@
 
 
 - if user_signed_in?
-  %a.btn{:href => "#comment", :role => 'button', 'data-toggle' => 'modal'}
+  %a.btn{:href => "#comment", :role => 'button', :id => 'commentoggle'}
     Add a comment
 - if user_signed_in? && can_edit(@post.user,current_user)
   = link_to 'Edit', edit_post_path(@post), :class => 'btn'
   = link_to 'Delete', @post, method: :delete, :class => 'btn', data: { confirm: 'Are you sure you want to delete this? You may never get it back.' }
 = link_to 'Back', posts_path, :class => 'btn'
+
 
 %h3.glow Comments
 %ul.media-list.row
@@ -40,20 +41,23 @@
         .media-body.comment
           = raw f.body
 
-.modal.fade.hide#comment
-  .modal-header
-    %button.close{ :type => 'button', 'data-dismiss' => 'modal', 'data-target' => '#comment'}
-      &times
-    %h3 Add a comment
-    .modal-body
-      = simple_form_for([@post, @post.comments.build], :html => {:class => 'form-horizontal'}) do |f|
-        .control-group
-          = f.input :body, label: false, input_html: { class: 'wysihtml5'}
-        .modal-footer.control-group
-          %a.btn{:href => "#", :type => 'button', 'data-dismiss' => 'modal', 'data-target' => '#comment'}
-            Close
-          = f.submit 'Save', :class => 'btn btn-primary'
+
+
+
+#comment.dform1.row
+  %h3 Add a comment
+  =simple_form_for([@post, @post.comments.build], :html => {:class => 'form-horizontal'}) do |f|
+    = f.input :body, label: false, input_html: { class: 'wysihtml5', width: 'auto' }
+    .control-group
+    =f.submit 'Save', :class => 'btn btn-primary'
+
 :javascript
+  $('#comment').hide();
+  $('#commentoggle').click(function(){
+    $('#comment').show();
+  });
   $('.wysihtml5').each(function(i, elem) {
-    $(elem).wysihtml5();
+    $(elem).wysihtml5({
+      "color": true
+    });
   });
