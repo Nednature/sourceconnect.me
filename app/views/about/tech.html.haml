@@ -1,0 +1,17 @@
+- content_for(:title) do
+  - 'About'
+.tabbable.span12
+  %ul.nav.nav-tabs
+    %li
+      %a{:href => "/about"} About
+    %li.active
+      %a{:href => "/about/tech"} Technical Data
+  .tab-content
+    .tab-pane.aboot.active
+      %ul
+        %li
+          Rendered By #{`hostname --fqdn`} (#{`uptime`}) (#{`uname -a`})
+        %li
+          Ruby Version #{RUBY_VERSION}
+        %li
+          Rails Version #{Rails::VERSION::STRING}
