@@ -71,3 +71,5 @@ gem 'rmagick'
 gem 'aws-sdk'
 
 gem 'friendly_id'
+
+gem 'turbolinks'

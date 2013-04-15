@@ -16,3 +16,4 @@
 //= require_tree .
 //= require bootstrap-wysihtml5
 //= require masonry/jquery.masonry
+//= require turbolinks
