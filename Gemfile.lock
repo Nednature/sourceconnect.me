@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/blasphemy/bootstrap-wysihtml5-rails.git
+  revision: 6069cde2b98974974b34c77e7afd71c78774da3f
+  specs:
+    bootstrap-wysihtml5-rails (0.3.1.19)
+      railties (>= 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -37,8 +44,6 @@ GEM
     bcrypt-ruby (3.0.1-x86-mingw32)
     bootstrap-sass (2.3.1.0)
       sass (~> 3.2)
-    bootstrap-wysihtml5-rails (0.3.1.19)
-      railties (>= 3.0)
     builder (3.0.4)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -219,7 +224,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk
-  bootstrap-wysihtml5-rails
+  bootstrap-wysihtml5-rails!
   coffee-rails (~> 3.2.1)
   devise
   execjs

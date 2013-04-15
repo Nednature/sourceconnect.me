@@ -48,7 +48,7 @@ gem 'devise'
 gem "twitter-bootstrap-rails"
 
 #bootstrap editor
-gem 'bootstrap-wysihtml5-rails'
+gem 'bootstrap-wysihtml5-rails', :git => "git://github.com/blasphemy/bootstrap-wysihtml5-rails.git"
 
 #railsadmin
 gem 'rails_admin'
