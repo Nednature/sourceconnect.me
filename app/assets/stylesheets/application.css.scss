@@ -184,6 +184,9 @@ body {
 	border-bottom: 1px black solid;
 }
 
+.pagination {
+	text-align: center;
+}
 
 
 .comment_user {
@@ -201,3 +204,9 @@ body {
 	height: 200px
 }
 
+
+.navdiv {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}

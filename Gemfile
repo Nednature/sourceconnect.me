@@ -73,3 +73,5 @@ gem 'aws-sdk'
 gem 'friendly_id'
 
 gem 'turbolinks'
+
+gem 'kaminari'

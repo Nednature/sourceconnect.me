@@ -232,6 +232,7 @@ DEPENDENCIES
   google-analytics-rails
   haml
   jquery-rails
+  kaminari
   masonry-rails
   mysql2
   omniauth

@@ -8,7 +8,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    @posts = Post.order("last_comment_at desc")
+    @posts = Post.order("last_comment_at desc").page(params[:page]).per(25)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
