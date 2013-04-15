@@ -23,7 +23,7 @@
 %ul.media-list.row
   - @post.comments.each do |f|
     %ul
-      %li.media.combox.span6
+      %li.media.combox.centered
         %a.pull-left{:href => user_path(f.user)}
           %img.media-object.avatar{:src => user_avatar_url(f.user,'thumb')}
         .pull-right.comment_user
