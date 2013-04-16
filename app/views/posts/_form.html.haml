@@ -12,6 +12,10 @@
       %span.add-on
         = f.label :title
       = f.text_field :title, :class => 'span5'
+    .input-prepend
+      %span.add-on
+        =f.label :category
+      = f.collection_select :category, Category.all, :id, :name
     .field
       = f.text_area :body, :class => 'wysihtml5 span6'
     .actions

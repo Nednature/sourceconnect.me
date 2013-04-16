@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
   attr_accessible :body, :title
   validates_presence_of :title, :body, :user
   belongs_to :user
+  belongs_to :category
   has_many :comments
   friendly_id :title, use: [:slugged, :history]
 end

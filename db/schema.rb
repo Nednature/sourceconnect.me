@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130405213439) do
+ActiveRecord::Schema.define(:version => 20130416072847) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -43,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20130405213439) do
     t.datetime "last_comment_at"
     t.boolean  "hidden",          :default => false
     t.string   "slug"
+    t.integer  "category_id"
   end
 
   add_index "posts", ["slug"], :name => "index_posts_on_slug"
@@ -53,7 +61,7 @@ ActiveRecord::Schema.define(:version => 20130405213439) do
     t.integer  "item"
     t.string   "table"
     t.integer  "month",      :limit => 2
-    t.integer  "year",       :limit => 8
+    t.integer  "year",       :limit => 5
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
   end
