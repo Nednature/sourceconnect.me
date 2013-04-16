@@ -7,8 +7,12 @@ class PostsController < ApplicationController
   # GET /posts.json
 
   def index
-    @posts = Post.all
-    @posts = Post.order("last_comment_at desc").page(params[:page]).per(25)
+    if (params.has_key?(:category_id))
+      @posts = Category.find(params[:category_id]).posts.order("last_comment_at desc").page(params[:page]).per(25)
+    else
+      @posts = Post.order("last_comment_at desc").page(params[:page]).per(25)
+    end
+    #@posts = Post.order("last_comment_at desc").page(params[:page]).per(25)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
@@ -97,5 +101,4 @@ class PostsController < ApplicationController
         redirect_to(post, :notice => 'You do not have permissions to edit this post')
       end
     end
-    
 end
