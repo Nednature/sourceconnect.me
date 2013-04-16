@@ -51,7 +51,7 @@ gem "twitter-bootstrap-rails"
 gem 'bootstrap-wysihtml5-rails', :git => "git://github.com/blasphemy/bootstrap-wysihtml5-rails.git"
 
 #railsadmin
-gem 'rails_admin'
+gem "rails_admin", "~> 0.4.7"
 
 #analytics nigga
 gem 'google-analytics-rails'
