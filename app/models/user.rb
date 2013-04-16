@@ -40,5 +40,13 @@ class User < ActiveRecord::Base
     end
   end
 
+  rails_admin do
+    list do
+      field :username
+      field :email
+      field :created_at
+    end
+  end
+
 
 end
