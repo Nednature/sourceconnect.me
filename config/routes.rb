@@ -5,7 +5,9 @@ Src::Application.routes.draw do
     get 'page/:page', :action => :index, :on => :collection
     resources :comments
   end
-  resources :about
+  #resources for about
+  match "/about" => "about#index"
+  match "/about/tech" => "about#tech"
   resources :users
   root :to => "posts#index"
   # The priority is based upon order of creation:
