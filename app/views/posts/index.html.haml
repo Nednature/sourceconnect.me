@@ -1,5 +1,8 @@
 - content_for(:title) do
 	Index
+- if (@category_name)
+	.dform1.centered
+		%h2.text-center Viewing Category: #{@category_name}
 
 - unless user_signed_in?
 	.row-fluid
@@ -11,7 +14,6 @@
 				=link_to 'Sign Up', new_user_registration_path, :class => 'btn-primary btn-large'
 
 .row.centered#postcontainer
-	-Post.order('last_comment_at')
 	- @posts.each do |f|
 		.span3.postbox.bump2
 			.bump

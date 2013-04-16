@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   def index
     if (params.has_key?(:category_id))
       @posts = Category.find(params[:category_id]).posts.order("last_comment_at desc").page(params[:page]).per(25)
+      @category_name = Category.find(params[:category_id]).name
     else
       @posts = Post.order("last_comment_at desc").page(params[:page]).per(25)
     end
