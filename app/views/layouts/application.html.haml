@@ -72,7 +72,7 @@
   left: 'auto' // Left position relative to parent in px
   };
   document.addEventListener("page:fetch", function(){
-    var spinner = new Spinner(opts).spin(document.body);
+    var spinner = new Spinner(opts).spin(window);
   });
   document.addEventListener("page:recieve", function(){
     spinner.stop();
