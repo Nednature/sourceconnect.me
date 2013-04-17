@@ -13,6 +13,7 @@
     = csrf_meta_tags
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
   %body
+    #screencenter
     = analytics_init
     .row-fluid
       .navbar.navbar-inverse.navbar-fixed-top
@@ -72,7 +73,7 @@
   left: 'auto' // Left position relative to parent in px
   };
   document.addEventListener("page:fetch", function(){
-    var spinner = new Spinner(opts).spin(window);
+    var spinner = new Spinner(opts).spin(document.getElementById('screencenter'));
   });
   document.addEventListener("page:recieve", function(){
     spinner.stop();
