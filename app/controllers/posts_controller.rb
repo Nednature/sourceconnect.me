@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     else
       @posts = Post.order("last_comment_at desc").page(params[:page]).per(25)
     end
-    #@posts = Post.order("last_comment_at desc").page(params[:page]).per(25)
+    @categories = Category.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }

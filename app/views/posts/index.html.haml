@@ -1,8 +1,28 @@
 - content_for(:title) do
 	Index
-- if (@category_name)
-	.dform1.centered
-		%h2.text-center Viewing Category: #{@category_name}
+
+.centered
+	.navbar
+		.navbar-inner
+			.brand Categories
+			%ul.nav
+				- if (@category_name)
+					%li
+						%a{:href => '/posts'}
+							All
+				- else
+					%li.active
+						%a{:href => '/posts'}
+							All
+				- @categories.each do |f|
+					- if (f.name == @category_name)
+						%li.active
+							%a{:href => category_url(f)}
+								= f.name
+					- else
+						%li
+							%a{:href => category_url(f)}
+								= f.name
 
 - unless user_signed_in?
 	.row-fluid

@@ -37,6 +37,12 @@ module ApplicationHelper
 		url
 	end
 
+	def category_url(category)
+		slug = category.slug
+		url = "/posts/category/#{slug}"
+		url
+	end
+
 	def user_avatar_url(user, size)
 		if user.avatar.present?
 			if (size == 'thumb')
