@@ -52,19 +52,18 @@
           = notice
       .span12
         = yield
-
 :javascript
-  var opts = {
+  var spinopts = {
     lines: 17,
     length: 40,
-    width: 7, 
-    radius: 48, 
-    corners: 1, 
-    rotate: 71, 
-    direction: 1, 
-    color: '#000', 
-    speed: 1.1, 
-    trail: 75, 
+    width: 7,
+    radius: 48,
+    corners: 1,
+    rotate: 71,
+    direction: 1,
+    color: '#000',
+    speed: 1.1,
+    trail: 75,
     shadow: true,
     zIndex: 2e9,
     hwaccel: true,
@@ -72,11 +71,15 @@
     top: 'auto',
     left: 'auto'
   };
-  var target = document.getElementById('screencenter');
-  var spinner = new Spinner(opts);
-  document.addEventListener("page:fetch", function(){
-    spinner.spin(target);
-  });
-  document.addEventListener("page:recieve", function(){
+  var spintarget = document.getElementById('screencenter');
+  var spinner = new Spinner(spinopts);
+  function startSpinner() {
+    spinner.spin(spintarget);
+  }
+  function stopSpinner() {
     spinner.stop();
-  });
+  }
+  /* Disable spinner for now
+  document.addEventListener("page:fetch", startSpinner);
+  document.addEventListener("page:load", stopSpinner);
+  */
