@@ -52,7 +52,6 @@
 	function resizeboxes() {
 		var width = $(window).width();
 		var setme;
-		console.log('resizeboxes called, detected width:', width);
 		if (width >= 1200) {
 			setme = '250px';
 		}
@@ -65,7 +64,6 @@
 		else {
 			setme = '100%'
 		}
-		console.log(setme, "set!!!!!");
 		$('.postbox').css('width', setme);
 	}
 	$(document).ready(function(){
