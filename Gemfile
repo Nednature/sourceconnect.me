@@ -2,9 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+#databases
 gem 'sqlite3'
 gem 'mysql2'
 
@@ -22,15 +20,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -59,19 +48,26 @@ gem 'google-analytics-rails'
 #use haml
 gem 'haml'
 
+#make my life easier
 gem 'simple_form'
 
+#index grid
 gem 'masonry-rails'
 
+#facebook login
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+#avatars and files
 gem 'paperclip'
 gem 'rmagick'
 gem 'aws-sdk'
 
+#pretty urls
 gem 'friendly_id'
 
+#black magic
 gem 'turbolinks'
 
+#pagination
 gem 'kaminari'
