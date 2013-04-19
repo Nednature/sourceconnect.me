@@ -68,6 +68,7 @@ gem 'friendly_id'
 
 #black magic
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 
 #pagination
 gem 'kaminari'
